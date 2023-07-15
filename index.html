@@ -1,26 +1,2389 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>My Webpage</title>
-</head>
-<body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <title>AI news All in One - Shelton</title>
+        
 
-  <h1>My Webpage</h1>
 
-  <p>Welcome to my page!</p>
+        <!-- Fonts -->
+        <link rel="stylesheet" href="./static/css/inter.css">
 
-  <!-- Embed Canva design -->
+        <link rel="preload" as="style" href="./static/css/app-4a581528.css" /><link rel="modulepreload" href="./static/js/app-0fc6666a.js" /><link rel="stylesheet" href="static/css/app-4a581528.css" /><script type="module" src="static/js/app-0fc6666a.js"></script>        <style >[wire\:loading], [wire\:loading\.delay], [wire\:loading\.inline-block], [wire\:loading\.inline], [wire\:loading\.block], [wire\:loading\.flex], [wire\:loading\.table], [wire\:loading\.grid], [wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short], [wire\:loading\.delay\.long], [wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest] {display:none;}[wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}input:-webkit-autofill, select:-webkit-autofill, textarea:-webkit-autofill {animation-duration: 50000s;animation-name: livewireautofill;}@keyframes livewireautofill { from {} }</style>
+        <script src="static/js/livewire.js" data-turbo-eval="false" data-turbolinks-eval="false" ></script><script data-turbo-eval="false" data-turbolinks-eval="false" >window.livewire = new Livewire();window.Livewire = window.livewire;window.livewire_app_url = '';window.livewire_token = 'QahTmWHDDZVF8AkiPFahaNEc7roZSrZbozRRuQu0';window.deferLoadingAlpine = function (callback) {window.addEventListener('livewire:load', function () {callback();});};let started = false;window.addEventListener('alpine:initializing', function () {if (! started) {window.livewire.start();started = true;}});document.addEventListener("DOMContentLoaded", function () {if (! started) {window.livewire.start();started = true;}});</script>
 
-  <div style="position: relative; width: 100%; height: 0; padding-top: 56.2225%;
-   padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-   border-radius: 8px; will-change: transform;">
-    <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-      src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFoq4i96Ng&#x2F;watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-    </iframe>
-  </div>
-  <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFoq4i96Ng&#x2F;watch?utm_content=DAFoq4i96Ng&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">CQ</a> by Shelton
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="QahTmWHDDZVF8AkiPFahaNEc7roZSrZbozRRuQu0">
+        
+        <link rel="icon" href="./static/picture/logo.jpg" as="image" />
 
-  <!-- Rest of page content -->
+        <style>
+    :root {
+    --comments-spacing: 2.5rem;
+    --comments-avatar-size: 1.5rem;
+    --comments-avatar-margin: 0.35rem;
+    --comments-border-radius: 0.3rem;
+    --comments-z-modal: 2;
 
-</body>
+    /* colors */
+    --comments-color-background: white;
+    --comments-color-background-nested: white;
+    --comments-color-background-paper: rgb(249, 250, 251);
+    --comments-color-background-info: rgb(237, 235, 252);
+
+    --comments-color-reaction: rgb(238, 239, 240);
+    --comments-color-reaction-hover: rgb(229, 231, 235);
+    --comments-color-reacted: rgba(67, 56, 202, 0.2);
+    --comments-color-reacted-hover: rgba(67, 56, 202, 0.35);
+
+    --comments-color-border: rgb(221, 221, 221);
+    
+    --comments-color-text:rgb(17, 24, 39);
+    --comments-color-text-dimmed: rgb(156, 163, 175);
+    --comments-color-text-inverse: white;
+    
+    --comments-color-accent: rgba(67, 56, 202);
+    --comments-color-accent-hover: rgba(67, 56, 202, 0.8);
+
+    --comments-color-danger: rgb(225, 29, 72);
+    --comments-color-danger-hover: rgb(225, 29, 72, 0.8);
+
+    --comments-color-success: rgb(10, 200, 134);
+    --comments-color-success-hover: rgb(10, 200, 134, 0.8);
+
+    --comments-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+@media (min-width: 768px) {
+    :root {
+        --comments-avatar-size: 2.5rem;
+        --comments-avatar-margin: 0.75rem;
+    }
+}
+
+.comments {
+    color: var(--comments-color-text);
+}
+
+.comments-avatar {
+    width: var(--comments-avatar-size);
+    height: var(--comments-avatar-size);
+    border-radius: var(--comments-avatar-size);
+    margin-right: var(--comments-avatar-margin);
+}
+
+/** Added to win agains Tailwind CDN specificity */
+.comments-button.comments-button {
+    border-radius: var(--comments-border-radius);
+    color: var(--comments-color-text-inverse);
+    background-color: var(--comments-color-accent);
+    padding: 0.25rem 0.75rem;
+    font-weight: 500;
+    line-height: 1.35;
+    transition: background 150ms;
+}
+
+.comments-button:hover {
+    background-color: var(--comments-color-accent-hover);
+}
+
+.comments-button.is-small {
+    padding: 0.15rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+.comments-button.is-link {
+    background-color: transparent;
+    color: var(--comments-color-text-dimmed);
+    text-decoration: underline;
+}
+
+.comments-button.is-danger {
+    background-color: var(--comments-color-danger);
+}
+
+.comments-button.is-danger:hover {
+    background-color: var(--comments-color-danger-hover);
+}
+
+.comments-button.is-success {
+    background-color: var(--comments-color-success);
+}
+
+.comments-button.is-success:hover {
+    background-color: var(--comments-color-success-hover);
+}
+
+.comments-button svg {
+    stroke: var(--comments-color-text-inverse);
+}
+
+.comments-comment {
+    display: flex;
+}
+
+.comments-nested .comments-comment{
+    background-color: var(--comments-color-background-nested);
+    padding: 0;
+}
+
+.comments-comment-inner {
+    flex-grow: 1;
+}
+
+.comments-comment-header {
+    position: relative;
+    font-weight: 500;
+    color: var(--comments-color-text);
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .comments-comment-header {
+        display: flex;
+        align-items: baseline;
+    }
+}
+
+.comments-comment-header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--comments-color-text-dimmed);
+    font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+    .comments-comment-header-actions {
+        margin-left: 0.5rem;
+    }
+}
+
+.comments-comment-header-actions li {
+    display: flex;
+    position: relative;
+}
+
+.comments-comment-header-actions li:not(:last-child):after {
+    content: "•";
+    margin: 0 0.25rem;
+}
+
+.comments-comment-header-actions li > a:hover,
+.comments-comment-header-actions li > button:hover {
+    text-decoration: underline;
+}
+
+.comments-comment-header-copied {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    font-size: 0.65rem;
+    white-space: nowrap;
+    color: var(--comments-color-success);
+}
+
+.comments-error {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--comments-color-danger);
+}
+
+.comments-form {
+    display: flex;
+    position: relative;
+}
+
+.comments-form-inner {
+    flex-grow: 1;
+}
+
+.comments-form-inner button {
+    margin-top: 0.5rem;
+}
+
+.comments-form-editor-tip {
+    color: var(--comments-color-text-dimmed);
+    font-size: 0.8rem;
+    padding: 0.25rem 0;
+    text-align: right;
+}
+
+.comments-form-editor-tip a {
+    text-decoration: underline;
+}
+
+.comments-newest-first > .comments-form {
+    margin-bottom: var(--comments-spacing);
+}
+
+.comments-group {
+    position: relative;
+    padding-bottom: var(--comments-spacing);
+    margin-bottom: var(--comments-spacing);
+}
+
+.comments-group:target {
+    margin-top: calc(-1 * var(--comments-spacing));
+    margin-left: calc(-0.5 * var(--comments-spacing));
+    margin-right: calc(-0.5 * var(--comments-spacing));
+    padding-top: var(--comments-spacing);
+    padding-left: calc(0.5 * var(--comments-spacing));
+    padding-right: calc(0.5 * var(--comments-spacing));
+    animation: highlight 1.5s ease-in-out;
+    border: solid 1px var(--comments-color-accent);
+    border-radius: var(--comments-border-radius);
+}
+
+@keyframes highlight {
+    0% {
+        transform: scale(1);
+    }
+    5% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scaleX(1.015);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.comments-group:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: calc(var(--comments-avatar-size) + var(--comments-avatar-margin));
+    border-bottom: 1px solid var(--comments-color-border);
+}
+
+.comments-group .comments-group {
+    padding-bottom: 0;
+    margin-top: calc(var(--comments-spacing) * 0.66);
+    margin-bottom: 0;
+}
+
+.comments-group .comments-group:after {
+    content: none;
+}
+
+.comments-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--comments-spacing);
+}
+
+.comments-header strong {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.comments-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    stroke: var(--comments-color-text);
+}
+
+.comments-approval {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: var( --comments-color-background-info);
+    border-radius: var(--comments-border-radius);
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.comments-approval-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.comments-modal {
+    position: absolute;
+    z-index: var(--comments-z-modal);
+    color: var(--comments-color-text);
+    font-size: 1rem;
+    background-color: var( --comments-color-background);
+    box-shadow: var( --comments-shadow);
+    border-radius: var(--comments-border-radius);
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+.comments-modal.is-left {
+    right: auto;
+    left: 0;
+}
+
+.comments-modal.is-bottom {
+    top: 100%;
+}
+
+.comments-modal.is-compact {
+    padding: 0.5rem;
+}
+
+.comments-modal-title {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.comments-modal-contents {
+    font-weight: normal;
+    line-height: 1.25;
+}
+
+.comments-modal-contents p {
+    margin-bottom: 0.5rem;
+    min-width: 8rem;
+}
+
+@media (min-width: 768px) {
+    .comments-modal-contents p {
+        min-width: 12rem;
+    }
+}
+
+.comments-modal-contents .comments-button {
+    float: right;
+}
+
+.comments-nested {
+    margin-top: calc(var(--comments-spacing) * 0.66);
+    padding-left: calc(var(--comments-avatar-size) + var(--comments-avatar-margin));
+}
+
+.comments-no-comment-yet {
+    text-align: center;
+    margin: 2rem 0 4rem 0;
+    color: var(--comments-color-text-dimmed);
+}
+
+.comments-placeholder,
+.comments-textarea {
+    border: 1px solid var(--comments-color-border);
+    border-radius: 4px;
+    width: 100%;
+    padding: 10px;
+    height: var(--comments-avatar-size);
+}
+
+.comments-placeholder:focus {
+    outline: none;
+}
+
+.comments-reactions {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.comments-reaction {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    border-radius: var(--comments-border-radius);
+    cursor: pointer;
+    background-color: var(--comments-color-reaction);
+    padding: 0 0.5rem;
+    height: 1.5rem;
+    font-size: 0.8rem;
+    transition: background 150ms;
+}
+
+.comments-reaction:hover {
+    background-color: var(--comments-color-reaction-hover);
+}
+
+.comments-reaction.is-reacted {
+    border: 1px solid var(--comments-color-accent);
+    background-color: var(--comments-color-reacted);
+}
+
+.comments-reaction.is-reacted:hover {
+    background-color: var(--comments-color-reacted-hover);
+}
+
+.comments-reaction-picker {
+    position: relative;
+}
+
+/** Added to win agains Tailwind CDN specificity */
+.comments-reaction-picker-trigger.comments-reaction-picker-trigger {
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    border-radius: var(--comments-border-radius);
+    background-color: var(--comments-color-reaction);
+    transition: background 150ms;
+}
+
+.comments-reaction-picker-trigger:hover {
+    background-color: var(--comments-color-reaction-hover);
+}
+
+.comments-reaction-picker-reactions {
+    display: grid;
+    gap: 0.25rem;
+}
+
+@media (min-width: 480px) {
+    .comments-reaction-picker-reactions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .comments-reaction-picker-reactions {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.comments-reaction-picker-reaction {
+    height: 1.75rem;
+    padding: 0 0.25rem;
+    border-radius: var(--comments-border-radius);
+    cursor: pointer;
+    transition: background 150ms;
+}
+
+.comments-reaction-picker-reaction:hover {
+    background-color: var(--comments-color-reaction);
+}
+
+.comments-reaction-picker-reaction.is-reacted {
+    background-color: var(--comments-color-reacted);
+}
+
+.comments-reaction-picker-reaction.is-reacted:hover {
+    background-color: var(--comments-color-reacted-hover);
+}
+
+.comments-reply {
+    margin-top: calc(var(--comments-spacing) * 0.66);
+}
+
+.comments-subscription {
+    position: relative;
+    margin-left: auto;
+    font-size: 0.8rem;
+}
+
+.comments-subscription-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--comments-border-radius);
+    background-color: var(--comments-color-reaction);
+    font-weight: 600;
+    transition: background 150ms;
+}
+
+.comments-subscription-trigger:hover {
+    background-color: var(--comments-color-reaction-hover);
+}
+
+.comments-subscription-item {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: left;
+    white-space: nowrap;
+    border-radius: var(--comments-border-radius);
+    transition: background 150ms;
+}
+
+.comments-subscription-item:hover {
+    background-color: var(--comments-color-reaction);
+}
+
+.comment-text {
+    max-width: calc(100% - var(--comments-avatar-size));
+}
+
+.comment-text > *,
+.comments-comment-inner {
+    max-width: 100%;
+}
+
+.comment-text code {
+    padding: 0.2rem 0.5rem;
+    background-color: var(--comments-color-background-paper);
+    border-radius: 0.3rem;
+}
+
+.comment-text .shiki {
+    font-size: 0.85rem;
+}
+
+.comment-text .shiki code {
+    padding: 0;
+    background-color: transparent;
+}
+
+.comment-text .shiki {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 0.2rem;
+    background-color: var(--comments-color-background-paper) !important;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+.comment-text a {
+    color: var(--comments-color-accent);
+    text-decoration: underline;
+}
+
+.comment-text > *:not(:first-child),
+.comment-text blockquote > *:not(:first-child),
+.comment-text ul > *:not(:first-child):not(li),
+.comment-text ol > *:not(:first-child):not(li) {
+    margin-top: 0.5rem;
+}
+
+.comment-text h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.comment-text h2 {
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
+.comment-text h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.comment-text h4 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.comment-text h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.comment-text h6 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.comment-text blockquote {
+    background-color: var(--comments-color-background-paper);
+    padding: 1rem;
+    border-left: solid 3px var(--comments-color-border);
+}
+
+.comment-text ul, .comment-text ol {
+    padding-left: 1rem;
+}
+
+.comment-text ul li {
+    list-style: circle;
+}
+
+.comment-text ol li {
+    list-style: decimal;
+}
+
+.comments-textarea {
+    min-height: 10rem;
+}
+
+
+/* EasyMDE buttons */
+.comments .CodeMirror {
+    border-color: var(--comments-color-border);
+}
+
+.comments .CodeMirror-scroll, .CodeMirror{
+    min-height: 10rem !important;
+}
+
+.comments .editor-toolbar {
+    border-color: var(--comments-color-border);
+    padding: 0.35rem;
+}
+
+.comments .editor-toolbar .separator {
+    border-left-color: var(--comments-color-border);
+}
+
+.comments .editor-toolbar button {
+    border: none;
+    transition: background 150ms;
+}
+.comments .editor-toolbar button:hover {
+    background-color: var(--comments-color-reaction);
+}
+
+.comments .editor-toolbar button.active {
+    background-color: var(--comments-color-reaction-hover);
+}
+
+</style>
+
+                    <script defer data-domain="news.bensbites.co" src="static/js/script.js"></script>
+            <!-- Moonpad -->
+            <script async defer data-website-id="f58f6300-e840-4bec-9499-93fc6a9293ab-0x5e" src="static/js/mothership.js"></script>
+            </head>
+
+    <body class="bg-gray-50 min-h-screen flex flex-col">
+            <div>
+        <div class="bg-white py-3 border-b" x-data="{ open: false, user_open: false }">
+    <div class="mx-auto flex w-full max-w-7xl justify-between">
+        <div class="flex items-center space-x-2"><a class="transition:all rounded-wt py-1 px-2 hover:bg-black/5"
+                href="https://news.bensbites.co">
+                <div class="flex items-center space-x-2">
+                    <div class="h-7 w-7 overflow-hidden rounded-wt">
+                        <figure class="flex-shrink-0 aspect-square relative h-full overflow-hidden w-full"><img
+                                class="absolute inset-0 h-full w-full object-cover" width="100" height="100"
+                                src="static/picture/logo.jpg" alt="Ben's Bites logo"></figure>
+                    </div>
+                    <span class="uppercase hidden sm:block text-md font-bold">Shelton's AI News</span>
+                    <span class="font-light text-sm">All latest news in one place</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="hidden md:inline-block">
+            <form action="https://news.bensbites.co/search">
+            <div class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
+                <div class="w-full max-w-lg lg:max-w-xs">
+                  <label for="q" class="sr-only">Search</label>
+                  <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                      <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                      </svg>
+                    </div>
+                    <input id="q" name="q" class="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Search" type="search" value="">
+                  </div>
+                </div>
+            </div>
+            </form>
+        </div>
+
+        <div class="z-20 flex items-center">
+            <div class="z-20 hidden sm:flex">
+
+                <a class="transition:all rounded-wt py-2 px-2 hover:bg-black/5" href="https://sponsor.bensbites.co/"
+                    target="_blank" rel="nofollow noreferrer noopener">
+                </a>
+            </div>
+
+            <div class="ml-2 flex items-center">
+                                    
+                            </div>
+            <div>
+                <button aria-label="Menu" class="rounded-full transition-all inline-block sm:hidden mr-1" id=""
+                    @click="open = ! open" type="button" aria-haspopup="true" aria-expanded="false">
+                    <div class="mt-1.5"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" aria-hidden="true"
+                            class="h-6 w-6 stroke-1 opacity-60 hover:opacity-100">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg></div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <form id="logout-form" action="https://news.bensbites.co/logout" method="POST" style="display: none;">
+        <input type="hidden" name="_token" value="QahTmWHDDZVF8AkiPFahaNEc7roZSrZbozRRuQu0">    </form>
+
+    <div class="inline-block md:hidden mt-6">
+        <form action="https://news.bensbites.co/search">
+        <div class="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
+            <div class="w-full max-w-lg lg:max-w-xs">
+              <label for="q" class="sr-only">Search</label>
+              <div class="relative">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+                <input id="q" name="q" class="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Search" type="search" value="">
+              </div>
+            </div>
+        </div>
+        </form>
+    </div>
+
+
+</div>
+    </div>
+    <div class="flex-grow">
+            <div class="mt-6 max-w-7xl mx-auto">
+
+        <div class="grid lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-8">
+                <div class="border rounded bg-white p-2 xl:mr-5">
+                    <div wire:id="9k3axa5EZQytUTSB9pNt" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;9k3axa5EZQytUTSB9pNt&quot;,&quot;name&quot;:&quot;list-posts&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[],&quot;path&quot;:&quot;https:\/\/news.bensbites.co&quot;},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;6167&quot;:{&quot;id&quot;:&quot;X9pAlmaxanIKIDzcWPjY&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6170&quot;:{&quot;id&quot;:&quot;nVKsifKpDbnmz24EDux7&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6171&quot;:{&quot;id&quot;:&quot;KpOvWCuqWjQaRd4hBZn6&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6172&quot;:{&quot;id&quot;:&quot;so9kVxUAJDDz5QmvUtTW&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6174&quot;:{&quot;id&quot;:&quot;BMy2e7EgOb3J5aPHbhlC&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6185&quot;:{&quot;id&quot;:&quot;mxd2QOFve322EIz26f7V&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6186&quot;:{&quot;id&quot;:&quot;lB5IPaPDaigt2UhX7tJm&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6189&quot;:{&quot;id&quot;:&quot;mkkQzALFnMNOO1tGo8jT&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6190&quot;:{&quot;id&quot;:&quot;VtUGwXMRIAcpkObTfRlU&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6191&quot;:{&quot;id&quot;:&quot;xSeTCtfY8XAE7zZq53dY&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6192&quot;:{&quot;id&quot;:&quot;xPJntpSFR9VfgM6W8J5t&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6194&quot;:{&quot;id&quot;:&quot;ob4rFuIwpKpJ2bWFzGJk&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6195&quot;:{&quot;id&quot;:&quot;yDchypMq6Yss4COjNcOR&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6198&quot;:{&quot;id&quot;:&quot;wAQGGdRCLSUtXryCfUSe&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6199&quot;:{&quot;id&quot;:&quot;QcEhcQBMdbbnHNzSzcuQ&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6202&quot;:{&quot;id&quot;:&quot;YQ2PY9fgo1rhyQkTzd5b&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6204&quot;:{&quot;id&quot;:&quot;Bij6Yp43hoFrY8Yc9rxq&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6206&quot;:{&quot;id&quot;:&quot;6uVAVOC8HRcWUFHe0yky&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6207&quot;:{&quot;id&quot;:&quot;PX5QxrhJcjWPwx1lhaZ3&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6208&quot;:{&quot;id&quot;:&quot;xqNYoiMSb5VAYQkI7Q4Z&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6209&quot;:{&quot;id&quot;:&quot;twW2WFXdUSM5hdlAYHTx&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6210&quot;:{&quot;id&quot;:&quot;NpPixeK4YBLAmvJ1SlDy&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6212&quot;:{&quot;id&quot;:&quot;02DsVGpdYKiTAiq8aTNj&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6213&quot;:{&quot;id&quot;:&quot;7eioCu4BYtO4fSDnNFly&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6214&quot;:{&quot;id&quot;:&quot;J5SNYoxrr09xucwynfRZ&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6215&quot;:{&quot;id&quot;:&quot;8jpM5GRS1wXzFLWxdcyZ&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6216&quot;:{&quot;id&quot;:&quot;OjFYF0jvvQxELS1NOueV&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6222&quot;:{&quot;id&quot;:&quot;ZckejQx0EZvLNFPZgBe3&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6223&quot;:{&quot;id&quot;:&quot;mhjEo6D0zwvwQsCE0Oat&quot;,&quot;tag&quot;:&quot;div&quot;},&quot;6229&quot;:{&quot;id&quot;:&quot;taZoYoW55w9999l9jysd&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;4e75bbb1&quot;,&quot;data&quot;:{&quot;sortBy&quot;:&quot;trending&quot;,&quot;sortDir&quot;:&quot;desc&quot;,&quot;dateFilter&quot;:&quot;today&quot;,&quot;tag&quot;:null,&quot;page&quot;:1,&quot;paginators&quot;:{&quot;page&quot;:1}},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;b97d0e8aafd3f2c44948c2acb31dc762dbd8915aae691aa42de2961132b47d36&quot;}}">
+    <div class="flex items-center text-sm text-gray-500 px-4">
+        <div class="w-full">
+            <div class="flex items-center gap-x-2 sm:hidden">
+                Sort
+                <div>
+                    <select wire:change="sortChange" wire:model="sortBy" class="block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <option value="trending">📈 Trending</option>
+                        <option value="topvoted">🔼 Top Voted</option>
+                        <option value="newest">🗓 Newest</option>
+                        
+                    </select>
+                </div>
+            </div>
+
+            <div class="hidden sm:block">
+                <nav class="-mb-px flex space-x-5" aria-label="Tabs">
+                    <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:border-primary hover:text-gray-700" -->
+
+
+                </nav>
+            </div>
+
+
+        </div>
+        <div class="ml-auto flex gap-x-2 items-center py-1 shrink-0">
+                    </div>
+    </div>
+
+    <div class="pt-4">
+        <div class="">
+                            <div class="flex flex-col pt-2">
+                                            <div wire:id="ZckejQx0EZvLNFPZgBe3" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;ZckejQx0EZvLNFPZgBe3&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;qbZiKsMQHXCrRugmBW1E&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;f7d49c1d&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6222,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;19a287931cd0fdc519e372c755de4978baef851b26ece851f18d00bb6b37358b&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="qbZiKsMQHXCrRugmBW1E" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;qbZiKsMQHXCrRugmBW1E&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6222,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;8a197934ee8a12c7f088eae86990c14c2594525e1ba5fdfcf730d7ac66541307&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:qbZiKsMQHXCrRugmBW1E -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6222-yc-offers-early-interviews-for-ai-companies/out" class="visited:text-secondary font-medium">
+                                                        YC offers early interviews for AI companies
+                                                    </a>
+                                                <span class="font-normal text-secondary text-xs italic">ycombinator.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            39
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36734110">hackernews</a>
+                        </span>
+                        <span>4 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6222-yc-offers-early-interviews-for-ai-companies">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:ZckejQx0EZvLNFPZgBe3 -->                                            <div wire:id="7eioCu4BYtO4fSDnNFly" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;7eioCu4BYtO4fSDnNFly&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;GUaysSatPOSG3FcfG9Dj&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;c1b7d793&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6213,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;cfbcdc1c8fd6d7c5f0f9af85dae30a251b7570cbae998d3c7b7545c801be3290&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="GUaysSatPOSG3FcfG9Dj" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;GUaysSatPOSG3FcfG9Dj&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6213,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;0c9d421a073774b0c5d1c5d5e03fadad15a031ec3599025dfff16e8ef22bc7ff&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:GUaysSatPOSG3FcfG9Dj -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6213-in-a-twitter-spaces-chat-elon-musk-says-xai-plans-to-collaborate-with-tesla-on-silicon-and-ai-software-use-public-tweets-for-ai-training-and-more/out" class="visited:text-secondary font-medium">
+                                                        In a Twitter Spaces chat, Elon Musk says xAI plans to collaborate with Tesla on silicon and AI software, use public tweets for AI training, and more
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/news" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">news</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">cnbc.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="http://www.techmeme.com/230714/p20#a230714p20">techmeme</a>
+                        </span>
+                        <span>11 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6213-in-a-twitter-spaces-chat-elon-musk-says-xai-plans-to-collaborate-with-tesla-on-silicon-and-ai-software-use-public-tweets-for-ai-training-and-more">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:7eioCu4BYtO4fSDnNFly -->                                            <div wire:id="taZoYoW55w9999l9jysd" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;taZoYoW55w9999l9jysd&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;fnfRJtPU6wLQSNF2rLoq&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;6e1392b6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6229,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;1a4f6c8fbf5666bdeca0380f0611bc96104833f57517e473544af56024176f30&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="fnfRJtPU6wLQSNF2rLoq" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;fnfRJtPU6wLQSNF2rLoq&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6229,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;65cb5f80b948aadbd41a5c7fec1f0b1eafca3931442e75356721965a97d6545a&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:fnfRJtPU6wLQSNF2rLoq -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6229-google-bard-says-that-a-linear-function-has-exponential-growth/out" class="visited:text-secondary font-medium">
+                                                        Google Bard says that a linear function has exponential growth
+                                                    </a>
+                                                <span class="font-normal text-secondary text-xs italic">bard.google.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            10
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36734913">hackernews</a>
+                        </span>
+                        <span>49 minutes ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6229-google-bard-says-that-a-linear-function-has-exponential-growth">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:taZoYoW55w9999l9jysd -->                                            <div wire:id="so9kVxUAJDDz5QmvUtTW" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;so9kVxUAJDDz5QmvUtTW&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;GWYEYjXkQ6w8M31g1Ikv&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;7f579265&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6172,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;6bccb978e21555042ed9d35195feac0aacb8517376b3fe35cc8f9de3bbadfba6&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="GWYEYjXkQ6w8M31g1Ikv" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;GWYEYjXkQ6w8M31g1Ikv&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6172,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;00e84b4b40928e5ff0c5d6ead2a669cc574e440a41b39328ad1bbac92c53514d&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:GWYEYjXkQ6w8M31g1Ikv -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6172-notebooklm/out" class="visited:text-secondary font-medium">
+                                                        NotebookLM
+                             &ndash; An AI notebook for everyone                        </a>
+                                                                                <a href="https://news.bensbites.co/tags/show" style=" background-color: #f9ddde;  color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">show</a>
+                                                                            <span class="font-normal text-secondary text-xs italic"></span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            136
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://www.producthunt.com/posts/notebooklm?utm_campaign=producthunt-api&amp;utm_medium=api-v2&amp;utm_source=Application%3A+Shinnny+%28ID%3A+97332%29">producthunt</a>
+                        </span>
+                        <span>15 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6172-notebooklm">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:so9kVxUAJDDz5QmvUtTW -->                                            <div wire:id="BMy2e7EgOb3J5aPHbhlC" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;BMy2e7EgOb3J5aPHbhlC&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;aXSNZgTnGJTEpHGOtSTd&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;6d500997&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6174,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;5fb67f118c58dea9d6ed12fe0fd808456fb2d2724b90c3e65ceb3e9e3448e338&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="aXSNZgTnGJTEpHGOtSTd" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;aXSNZgTnGJTEpHGOtSTd&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1b441c70&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6174,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;7932bcd07ed0a35a6cd6b96a8db516c70b7eb9e060d10aa00973e91955344387&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                1
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:aXSNZgTnGJTEpHGOtSTd -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6174-threadbois/out" class="visited:text-secondary font-medium">
+                                                        ThreadBois
+                             &ndash; Create viral Threads hooks for Twitter &amp; Threads app                        </a>
+                                                                                <a href="https://news.bensbites.co/tags/show" style=" background-color: #f9ddde;  color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">show</a>
+                                                                            <span class="font-normal text-secondary text-xs italic"></span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            140
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://www.producthunt.com/posts/threadbois?utm_campaign=producthunt-api&amp;utm_medium=api-v2&amp;utm_source=Application%3A+Shinnny+%28ID%3A+97332%29">producthunt</a>
+                        </span>
+                        <span>18 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6174-threadbois">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:BMy2e7EgOb3J5aPHbhlC -->                                            <div wire:id="KpOvWCuqWjQaRd4hBZn6" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;KpOvWCuqWjQaRd4hBZn6&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;QBvzxQCvT3kJG5uMAr7S&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;f2cebbf4&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6171,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;16c3342367a5e8791ffd7ef7cd3aeabefbed637f6591d4cfed438c9183e49d20&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="QBvzxQCvT3kJG5uMAr7S" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;QBvzxQCvT3kJG5uMAr7S&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6171,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;fddfbad68b9a06a6b3c6cfbeba0753c85fbb891610b52b8c93f31a17fee64925&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:QBvzxQCvT3kJG5uMAr7S -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6171-sweep/out" class="visited:text-secondary font-medium">
+                                                        Sweep
+                             &ndash; Sweep is an AI-powered junior dev on your team                        </a>
+                                                                                <a href="https://news.bensbites.co/tags/show" style=" background-color: #f9ddde;  color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">show</a>
+                                                                            <span class="font-normal text-secondary text-xs italic"></span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            245
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://www.producthunt.com/posts/sweep-5?utm_campaign=producthunt-api&amp;utm_medium=api-v2&amp;utm_source=Application%3A+Shinnny+%28ID%3A+97332%29">producthunt</a>
+                        </span>
+                        <span>20 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6171-sweep">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:KpOvWCuqWjQaRd4hBZn6 -->                                            <div wire:id="NpPixeK4YBLAmvJ1SlDy" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;NpPixeK4YBLAmvJ1SlDy&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;5r3Rxq6qvOjSScKQuRnl&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;a97765c4&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6210,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;deea00bb3174a89934f25d40f5adb34e75e5a397386d078ed2b2a2388ede31a6&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="5r3Rxq6qvOjSScKQuRnl" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;5r3Rxq6qvOjSScKQuRnl&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6210,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;0c9a31a05356fdbb01a65919506aa9c272db0875cbaea244635d8135d99faecc&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:5r3Rxq6qvOjSScKQuRnl -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6210-claude-2-internal-api-client-and-cli/out" class="visited:text-secondary font-medium">
+                                                        Claude 2 Internal API Client and CLI
+                                                    </a>
+                                                <span class="font-normal text-secondary text-xs italic">github.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            75
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36729090">hackernews</a>
+                        </span>
+                        <span>15 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6210-claude-2-internal-api-client-and-cli">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:NpPixeK4YBLAmvJ1SlDy -->                                            <div wire:id="PX5QxrhJcjWPwx1lhaZ3" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;PX5QxrhJcjWPwx1lhaZ3&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;f1JgzfZfDC7BJKHulylx&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;ef4e95b2&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6207,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;446c98edc2b63aa8c81d2535c632c9542f97801c4a83f33302a9e3832394a3ee&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="f1JgzfZfDC7BJKHulylx" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;f1JgzfZfDC7BJKHulylx&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6207,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;1cb3bdbcb3a28e1de9aed4bbc53633a2cdce7fa05d3194c6c7d1677a5d41abda&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:f1JgzfZfDC7BJKHulylx -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6207-sources-elon-musk-claimed-his-new-startup-xai-was-worth-20b-while-he-was-trying-to-recruit-top-ai-talent-including-by-offering-equity-in-xai/out" class="visited:text-secondary font-medium">
+                                                        Sources: Elon Musk claimed his new startup xAI was worth $20B while he was trying to recruit top AI talent, including by offering equity in xAI
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/news" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">news</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">semafor.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="http://www.techmeme.com/230714/p15#a230714p15">techmeme</a>
+                        </span>
+                        <span>17 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6207-sources-elon-musk-claimed-his-new-startup-xai-was-worth-20b-while-he-was-trying-to-recruit-top-ai-talent-including-by-offering-equity-in-xai">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:PX5QxrhJcjWPwx1lhaZ3 -->                                            <div wire:id="wAQGGdRCLSUtXryCfUSe" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;wAQGGdRCLSUtXryCfUSe&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;d5E5UBzYfgUBJP1MiIq6&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;aeebf81c&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6198,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;ce97d41491ee3de48cfa181ce9b45e53b3e4c629af71d6b3e2b7a4b9d67c89cb&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="d5E5UBzYfgUBJP1MiIq6" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;d5E5UBzYfgUBJP1MiIq6&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6198,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;62cd5ca43f0cc13b7f5a6c701c1fc7e7f1721810b20afbb1be3cd48c628181c3&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:d5E5UBzYfgUBJP1MiIq6 -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6198-meta-to-release-open-source-commercial-ai-model/out" class="visited:text-secondary font-medium">
+                                                        Meta to release open-source commercial AI model
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/news" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">news</a>
+                                                        <a href="https://news.bensbites.co/tags/meta" style=" background-color: #fffcd7; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">meta</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">zdnet.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            167
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36724739">hackernews</a>
+                        </span>
+                        <span>20 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6198-meta-to-release-open-source-commercial-ai-model">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:wAQGGdRCLSUtXryCfUSe -->                                            <div wire:id="Bij6Yp43hoFrY8Yc9rxq" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;Bij6Yp43hoFrY8Yc9rxq&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;chizhPtFJjDqSCf5bdUV&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;63e17428&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6204,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;2ceda1b96be40cbecb8e80b4753eced375bbbd28900bb74a05a9ba4701f2858f&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="chizhPtFJjDqSCf5bdUV" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;chizhPtFJjDqSCf5bdUV&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6204,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;aaddbe0acd2efcdbfa1eb313324cba32652216e1a0d44eb710b02a1e9a5ab588&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:chizhPtFJjDqSCf5bdUV -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6204-designers-sue-shein-over-ai-ripoffs-of-their-work/out" class="visited:text-secondary font-medium">
+                                                        Designers sue Shein over AI ripoffs of their work
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/news" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">news</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">techcrunch.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="">techcrunch</a>
+                        </span>
+                        <span>18 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6204-designers-sue-shein-over-ai-ripoffs-of-their-work">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:Bij6Yp43hoFrY8Yc9rxq -->                                            <div wire:id="mxd2QOFve322EIz26f7V" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;mxd2QOFve322EIz26f7V&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;84F3BxQPMl1vqVTYW7yD&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;dfd073fc&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6185,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;2f4eccec580e2d4962bde2f17699f0f1900e6694d3cdd96c87e4a9df56825508&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="84F3BxQPMl1vqVTYW7yD" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;84F3BxQPMl1vqVTYW7yD&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6185,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;9cfbeed829390fdd16323382f642556439f7f62555a7f6d5c9e705647d44c103&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:84F3BxQPMl1vqVTYW7yD -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6185-albus-ai-for-chrome/out" class="visited:text-secondary font-medium">
+                                                        Albus AI for Chromeᵀᴹ
+                             &ndash; Chrome extension to ask Qs, summarize info, generate content                        </a>
+                                                                                <a href="https://news.bensbites.co/tags/show" style=" background-color: #f9ddde;  color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">show</a>
+                                                                            <span class="font-normal text-secondary text-xs italic"></span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            191
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://www.producthunt.com/posts/albus-ai-for-chrome?utm_campaign=producthunt-api&amp;utm_medium=api-v2&amp;utm_source=Application%3A+Shinnny+%28ID%3A+97332%29">producthunt</a>
+                        </span>
+                        <span>21 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6185-albus-ai-for-chrome">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:mxd2QOFve322EIz26f7V -->                                            <div wire:id="QcEhcQBMdbbnHNzSzcuQ" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;QcEhcQBMdbbnHNzSzcuQ&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;W5f0v93dT6P3GKGGcoyD&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;005011c3&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6199,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;,&quot;user&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;ac4716ea9ddbd09df5be90db60e6ee48e1d37dfdfb1a77cb8acad53db8a84908&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="W5f0v93dT6P3GKGGcoyD" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;W5f0v93dT6P3GKGGcoyD&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;180f4f1c&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6199,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;c560286923778efaa4868e0761707829c30f9d0a6a8e36dec18eb12cbcb12302&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                3
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:W5f0v93dT6P3GKGGcoyD -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6199-no-im-not-scared-of-ai-even-though-i-write-for-a-living/out" class="visited:text-secondary font-medium">
+                                                        No, I&#039;m not scared of AI even though I write for a living
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/chatgpt" style=" background-color: #fffcd7; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">chatgpt</a>
+                                                        <a href="https://news.bensbites.co/tags/learn" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">learn</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">cyberpatterns.xyz</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span> by <a class="hover:underline  " href="https://news.bensbites.co/users/iamjasonlevin">
+                            iamjasonlevin
+                        </a>
+                        </span>
+                        <span>20 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6199-no-im-not-scared-of-ai-even-though-i-write-for-a-living">
+                                                            1 comment
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:QcEhcQBMdbbnHNzSzcuQ -->                                            <div wire:id="YQ2PY9fgo1rhyQkTzd5b" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;YQ2PY9fgo1rhyQkTzd5b&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;ZKHKSsYm4fSWY727qbam&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;b7d8ed65&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6202,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;386107d14f41df10c7e170d46186277e1b86c1185e44953886b1984319123c27&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="ZKHKSsYm4fSWY727qbam" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;ZKHKSsYm4fSWY727qbam&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6202,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;bed9622dc4272a13eb679688a17373fbaf08ddf13fae0576465779eca8cf669d&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:ZKHKSsYm4fSWY727qbam -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6202-workers-that-made-chatgpt-less-harmful-ask-lawmakers-to-stem-alleged-exploitation-by-big-tech/out" class="visited:text-secondary font-medium">
+                                                        Workers that made ChatGPT less harmful ask lawmakers to stem alleged exploitation by Big Tech
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/news" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">news</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">techcrunch.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="">techcrunch</a>
+                        </span>
+                        <span>19 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6202-workers-that-made-chatgpt-less-harmful-ask-lawmakers-to-stem-alleged-exploitation-by-big-tech">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:YQ2PY9fgo1rhyQkTzd5b -->                                            <div wire:id="J5SNYoxrr09xucwynfRZ" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;J5SNYoxrr09xucwynfRZ&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;DstV9C6fjzSGcHgB4kAi&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;a879f85b&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6214,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;94ed63742027c65de38491b43fac70754fc92e258c9cdcf6ffe12f348bf40a43&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="DstV9C6fjzSGcHgB4kAi" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;DstV9C6fjzSGcHgB4kAi&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6214,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;1b98e731ddefd33bae376effaa69907aadf20ab83bdd2a855c5370f10202531f&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:DstV9C6fjzSGcHgB4kAi -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6214-an-ai-engineer-explains-why-most-ai-startups-will-die/out" class="visited:text-secondary font-medium">
+                                                        An AI Engineer Explains Why Most AI Startups Will Die
+                                                    </a>
+                                                <span class="font-normal text-secondary text-xs italic">businessinsider.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            18
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36732175">hackernews</a>
+                        </span>
+                        <span>10 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6214-an-ai-engineer-explains-why-most-ai-startups-will-die">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:J5SNYoxrr09xucwynfRZ -->                                            <div wire:id="OjFYF0jvvQxELS1NOueV" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;OjFYF0jvvQxELS1NOueV&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;IUN7QE4igzLUVQgZLnmr&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;ae236415&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6216,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;1a0c39bbf844bd62fea935c499ac27c6b59fa0d7e667a5a7ead8968dc70480fe&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="IUN7QE4igzLUVQgZLnmr" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;IUN7QE4igzLUVQgZLnmr&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6216,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;f758efbb2426e6116520ca490fbb30f0c07538f0c756561655bc11a68b1ad9bd&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:IUN7QE4igzLUVQgZLnmr -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6216-ask-hn-what-does-your-ai-tech-stack-look-like/out" class="visited:text-secondary font-medium">
+                                                        Ask HN: What does your AI tech stack look like?
+                                                    </a>
+                                                <span class="font-normal text-secondary text-xs italic"></span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            12
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36718651">hackernews</a>
+                        </span>
+                        <span>8 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6216-ask-hn-what-does-your-ai-tech-stack-look-like">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:OjFYF0jvvQxELS1NOueV -->                                            <div wire:id="VtUGwXMRIAcpkObTfRlU" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;VtUGwXMRIAcpkObTfRlU&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;PWit2tCl1ckOA10AtD5h&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;dc8c7598&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6190,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;b7e51489638882ff3f4fa351df9ba2d1b6de18251ada5642ca5d02cba3991181&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="PWit2tCl1ckOA10AtD5h" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;PWit2tCl1ckOA10AtD5h&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;180f4f1c&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6190,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;e4799087c29e589d4e8701e23dfa4216dd7002b48ce9c9800adbf2a7c7bc5555&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                3
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:PWit2tCl1ckOA10AtD5h -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6190-meta-claims-its-new-art-generating-model-is-best-in-class/out" class="visited:text-secondary font-medium">
+                                                        Meta claims its new art-generating model is best-in-class
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/news" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">news</a>
+                                                        <a href="https://news.bensbites.co/tags/meta" style=" background-color: #fffcd7; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">meta</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">techcrunch.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="">techcrunch</a>
+                        </span>
+                        <span>22 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6190-meta-claims-its-new-art-generating-model-is-best-in-class">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:VtUGwXMRIAcpkObTfRlU -->                                            <div wire:id="ob4rFuIwpKpJ2bWFzGJk" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;ob4rFuIwpKpJ2bWFzGJk&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;hvQul3IhV0DFfmfQQZTG&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;2665b7f6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6194,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;332676be45c8a010ee9a1f6e145e9e997d99c2740ace17cf064dbf00f6f9cb17&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="hvQul3IhV0DFfmfQQZTG" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;hvQul3IhV0DFfmfQQZTG&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1b441c70&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6194,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;d383b213e9a21348d892c5759d0a8ff5f2ea295835215c0efa04ce2e16c876b8&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                1
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:hvQul3IhV0DFfmfQQZTG -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6194-were-in-the-pruning-phase-of-tech-layoffs/out" class="visited:text-secondary font-medium">
+                                                        We’re in the pruning phase of tech layoffs
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/news" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">news</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">techcrunch.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="">techcrunch</a>
+                        </span>
+                        <span>21 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6194-were-in-the-pruning-phase-of-tech-layoffs">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:ob4rFuIwpKpJ2bWFzGJk -->                                            <div wire:id="twW2WFXdUSM5hdlAYHTx" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;twW2WFXdUSM5hdlAYHTx&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;Efi4zPjU6gHN0spRXtsh&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;5663b7ce&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6209,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;f95579735d5a878603d43d3377a4f063211d05fa7c8e4335940423790c47a7c8&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="Efi4zPjU6gHN0spRXtsh" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;Efi4zPjU6gHN0spRXtsh&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6209,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;074a02dbacce9b281514746a6f07c2264072f2252fdb07f5f4d0f02c792b66f6&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:Efi4zPjU6gHN0spRXtsh -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6209-pulling-my-site-from-google-over-ai-training/out" class="visited:text-secondary font-medium">
+                                                        Pulling my site from Google over AI training
+                                                    </a>
+                                                <span class="font-normal text-secondary text-xs italic">tracydurnell.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            43
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36727384">hackernews</a>
+                        </span>
+                        <span>16 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6209-pulling-my-site-from-google-over-ai-training">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:twW2WFXdUSM5hdlAYHTx -->                                            <div wire:id="xSeTCtfY8XAE7zZq53dY" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;xSeTCtfY8XAE7zZq53dY&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;QJj2bJnoivQEARcJ1vID&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;57f54705&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6191,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;4c4243ab667c36b05fe44c5285bd243ba0ee195d262b4c5468a7a4592821248e&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="QJj2bJnoivQEARcJ1vID" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;QJj2bJnoivQEARcJ1vID&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1b441c70&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6191,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;5a2b1b9624a6463dc1e7316bacaaf9c772e90f84fae9d1f6c0d36c783c2aa916&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                1
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:QJj2bJnoivQEARcJ1vID -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6191-meta-unveils-cm3leon-an-image-generation-transformer-model-requiring-five-times-less-compute-and-a-smaller-training-dataset-than-past-transformer-based-methods/out" class="visited:text-secondary font-medium">
+                                                        Meta unveils CM3leon, an image generation transformer model requiring five times less compute and a smaller training dataset than past transformer-based methods
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/news" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">news</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">techcrunch.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="http://www.techmeme.com/230714/p8#a230714p8">techmeme</a>
+                        </span>
+                        <span>22 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6191-meta-unveils-cm3leon-an-image-generation-transformer-model-requiring-five-times-less-compute-and-a-smaller-training-dataset-than-past-transformer-based-methods">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:xSeTCtfY8XAE7zZq53dY -->                                            <div wire:id="lB5IPaPDaigt2UhX7tJm" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;lB5IPaPDaigt2UhX7tJm&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;FLmDzmlbhOj4nFmISdJZ&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;760b2fc3&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6186,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;,&quot;user&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;faa30a4cc7fbe2e57671df1c46c5977abb03938daf8fbbf549f6bced8c0c99b4&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="FLmDzmlbhOj4nFmISdJZ" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;FLmDzmlbhOj4nFmISdJZ&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1c77131e&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6186,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;00df2d65b4d58f64a2c3d3579abd7e0dc9e71574753c1252c95aa4649ae3c598&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                4
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:FLmDzmlbhOj4nFmISdJZ -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6186-100-book-summaries-on-business-and-technology/out" class="visited:text-secondary font-medium">
+                                                        +100 Book Summaries on Business and Technology
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/show" style=" background-color: #f9ddde;  color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">show</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">playtext.app</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span> by <a class="hover:underline  " href="https://news.bensbites.co/users/phelipe">
+                            phelipe
+                        </a>
+                        </span>
+                        <span>23 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6186-100-book-summaries-on-business-and-technology">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:lB5IPaPDaigt2UhX7tJm -->                                            <div wire:id="mhjEo6D0zwvwQsCE0Oat" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;mhjEo6D0zwvwQsCE0Oat&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;L3rCi6lujP89jZoa7EYJ&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;838bc0ff&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6223,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;0988f25ba2f0870876c205a7de6049fb00a00347bb528079b6ee1a9aef6f3e19&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="L3rCi6lujP89jZoa7EYJ" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;L3rCi6lujP89jZoa7EYJ&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6223,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;d74a3d35fcad7c3f2092fceec8a61a0da520b5fee2545fbd061a55d6b48b620f&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:L3rCi6lujP89jZoa7EYJ -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6223-show-hn-curated-transformers-pytorch-llms-with-less-code-duplication/out" class="visited:text-secondary font-medium">
+                                                        Show HN: Curated Transformers – PyTorch LLMs with less code duplication
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/show" style=" background-color: #f9ddde;  color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">show</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">github.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            4
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36734366">hackernews</a>
+                        </span>
+                        <span>4 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6223-show-hn-curated-transformers-pytorch-llms-with-less-code-duplication">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:mhjEo6D0zwvwQsCE0Oat -->                                            <div wire:id="8jpM5GRS1wXzFLWxdcyZ" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;8jpM5GRS1wXzFLWxdcyZ&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;nV7fiQ9Pif1jsCvqph0x&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;736cc69b&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6215,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;c18e3154ffa5003911775d0eecd9df492266a3fbeb7aed07246b8557683d4f3f&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="nV7fiQ9Pif1jsCvqph0x" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;nV7fiQ9Pif1jsCvqph0x&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6215,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;045b237fa80ecafda082198ea0d95f04fcea2f0b1fa3988a5a75e396452bce2c&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:nV7fiQ9Pif1jsCvqph0x -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6215-pinecone-leads-explosion-in-vector-databases-for-generative-ai/out" class="visited:text-secondary font-medium">
+                                                        Pinecone leads ‘explosion’ in vector databases for generative AI
+                                                    </a>
+                                                <span class="font-normal text-secondary text-xs italic">venturebeat.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            10
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36732365">hackernews</a>
+                        </span>
+                        <span>9 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6215-pinecone-leads-explosion-in-vector-databases-for-generative-ai">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:8jpM5GRS1wXzFLWxdcyZ -->                                            <div wire:id="yDchypMq6Yss4COjNcOR" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;yDchypMq6Yss4COjNcOR&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;xS3nFTMl2MWEKx6s5jIa&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1094ff84&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6195,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;,&quot;user&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;e4bb0efcb3e1856d44942b9ad8fcafd51d6b24cce206423018f58c771d5d0e65&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="xS3nFTMl2MWEKx6s5jIa" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;xS3nFTMl2MWEKx6s5jIa&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1b441c70&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6195,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;96b7fdac2ab8ab0ce5c1600f1fc9396f65b8dc09b82b78d702c6dcf90ae4ebfa&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                1
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:xS3nFTMl2MWEKx6s5jIa -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6195-building-a-simple-customer-support-chatbot-with-langchain/out" class="visited:text-secondary font-medium">
+                                                        Building a simple customer support chatbot with LangChain
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/learn" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">learn</a>
+                                                        <a href="https://news.bensbites.co/tags/langchain" style=" background-color: #fffcd7;  color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">langchain</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">notes.aimodels.fyi</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span> by <a class="hover:underline  " href="https://news.bensbites.co/users/mikelabs">
+                            mikelabs
+                        </a>
+                        </span>
+                        <span>21 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6195-building-a-simple-customer-support-chatbot-with-langchain">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:yDchypMq6Yss4COjNcOR -->                                            <div wire:id="02DsVGpdYKiTAiq8aTNj" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;02DsVGpdYKiTAiq8aTNj&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;VyEUxOkiaJyyCYqrrDY9&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;5ba19456&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6212,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;d981135e26ac528ca21542b575d06552ba9835524663f142436b3ac30eb09a46&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="VyEUxOkiaJyyCYqrrDY9" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;VyEUxOkiaJyyCYqrrDY9&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6212,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;93b406f237f5c7c28bac0ff35b97ecef0b7163fa7f29d925e7f83fe20d6ac3e0&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:VyEUxOkiaJyyCYqrrDY9 -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6212-code-interpreter-has-been-disabled-for-all-chatgpt-users/out" class="visited:text-secondary font-medium">
+                                                        Code Interpreter has been disabled for all ChatGPT users
+                                                    </a>
+                                                <span class="font-normal text-secondary text-xs italic">twitter.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            15
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36728976">hackernews</a>
+                        </span>
+                        <span>13 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6212-code-interpreter-has-been-disabled-for-all-chatgpt-users">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:02DsVGpdYKiTAiq8aTNj -->                                            <div wire:id="xPJntpSFR9VfgM6W8J5t" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;xPJntpSFR9VfgM6W8J5t&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;NIT15mjGRinZ81YjFLEx&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;8ec3205c&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6192,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;829ad9bcddf37e877b55a2209a490cf1c902b559fdb150c2f5456b21f57b1f31&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="NIT15mjGRinZ81YjFLEx" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;NIT15mjGRinZ81YjFLEx&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6192,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;a027a5c7193aebeba1faa63dc28ad902ed050257e60820b997171d3a95e3a242&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:NIT15mjGRinZ81YjFLEx -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6192-an-indiana-police-department-has-been-using-clearview-ai-for-a-year/out" class="visited:text-secondary font-medium">
+                                                        An Indiana police department has been using Clearview AI for a year
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/news" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">news</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">techdirt.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            55
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36723646">hackernews</a>
+                        </span>
+                        <span>22 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6192-an-indiana-police-department-has-been-using-clearview-ai-for-a-year">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:xPJntpSFR9VfgM6W8J5t -->                                            <div wire:id="xqNYoiMSb5VAYQkI7Q4Z" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;xqNYoiMSb5VAYQkI7Q4Z&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;BtCwQ0Dl1FFL039bWGyA&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;fe8c55cc&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6208,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;750e606da72a8710b6358be78c4320d20fac9f03016af7322bedf404cc3fdbc6&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="BtCwQ0Dl1FFL039bWGyA" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;BtCwQ0Dl1FFL039bWGyA&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6208,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;c571314116c8a1828f8ba05b60a602545b8f2730d279bfef726610e5e8de2972&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:BtCwQ0Dl1FFL039bWGyA -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6208-genai-with-llms-hands-on-training-feat-hugging-face-and-pytorch-lightning/out" class="visited:text-secondary font-medium">
+                                                        GenAI with LLMs: Hands-On Training Feat. Hugging Face and PyTorch Lightning
+                                                    </a>
+                                                <span class="font-normal text-secondary text-xs italic">youtube.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            21
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36727905">hackernews</a>
+                        </span>
+                        <span>17 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6208-genai-with-llms-hands-on-training-feat-hugging-face-and-pytorch-lightning">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:xqNYoiMSb5VAYQkI7Q4Z -->                                            <div wire:id="6uVAVOC8HRcWUFHe0yky" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;6uVAVOC8HRcWUFHe0yky&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;rMwFWb8KeCgZgUtlN5i6&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;7488a263&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6206,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;347b40c3d35fcf294a17faac42e490ed74f6030420823cbde6fce3442bbed0dd&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="rMwFWb8KeCgZgUtlN5i6" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;rMwFWb8KeCgZgUtlN5i6&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1ae1b5c6&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6206,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;e58195418500354a964dfd0406fe6a593d4afa04d8b46891e6b32e5d3dfc2c40&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                0
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:rMwFWb8KeCgZgUtlN5i6 -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6206-elon-musk-threw-nine-figure-promises-at-top-ai-researchers/out" class="visited:text-secondary font-medium">
+                                                        Elon Musk threw nine-figure promises at top AI researchers
+                                                    </a>
+                                                <span class="font-normal text-secondary text-xs italic">semafor.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            21
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36727494">hackernews</a>
+                        </span>
+                        <span>17 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6206-elon-musk-threw-nine-figure-promises-at-top-ai-researchers">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:6uVAVOC8HRcWUFHe0yky -->                                            <div wire:id="mkkQzALFnMNOO1tGo8jT" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;mkkQzALFnMNOO1tGo8jT&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;kr2Fzf1tASu134AVBq5H&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;080307ae&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6189,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;eb6fa851c6ecdbf725b6bafeec29c3f129791430c23584f29c542e8c1767fa9a&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="kr2Fzf1tASu134AVBq5H" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;kr2Fzf1tASu134AVBq5H&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;19aae6aa&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6189,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;13f1d316761678b24e8397321d638da31b517dfaf79794475c875fb4af153b5b&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                2
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:kr2Fzf1tASu134AVBq5H -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6189-musk-tells-chinas-leaders-superintelligent-ai-could-overthrow-them/out" class="visited:text-secondary font-medium">
+                                                        Musk tells China&#039;s leaders superintelligent AI could overthrow them
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/news" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">news</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">businessinsider.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                                            <div class="flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+                        </svg>
+                        <span class="mx-1">
+                            7
+                        </span>
+                        &bull;
+                    </div>
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="https://news.ycombinator.com/item?id=36722185">hackernews</a>
+                        </span>
+                        <span>23 hours ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6189-musk-tells-chinas-leaders-superintelligent-ai-could-overthrow-them">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:mkkQzALFnMNOO1tGo8jT -->                                            <div wire:id="X9pAlmaxanIKIDzcWPjY" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;X9pAlmaxanIKIDzcWPjY&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;bJHoriwVkTn1by590OS5&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;660aa8cd&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6167,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;327592d5194d79e811267acc32889074fb1865ed159a0307e06a31adc45409b7&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="bJHoriwVkTn1by590OS5" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;bJHoriwVkTn1by590OS5&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1c77131e&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6167,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;1c6478ded62f6ab2b1341849a9fe681446e8ab4511e911ac84abe179e452f37c&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                4
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:bJHoriwVkTn1by590OS5 -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6167-london-based-causaly-which-uses-ai-for-biomedical-research-and-drug-discovery-raised-a-60m-series-b-led-by-iconiq-growth-taking-its-total-funding-to-93m/out" class="visited:text-secondary font-medium">
+                                                        London-based Causaly, which uses AI for biomedical research and drug discovery, raised a $60M Series B led by ICONIQ Growth, taking its total funding to $93M
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/news" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">news</a>
+                                                        <a href="https://news.bensbites.co/tags/funding" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">funding</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">techcrunch.com</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span>
+                            via <a rel="nofollow noopener" target="_blank"
+                                href="http://www.techmeme.com/230713/p43#a230713p43">techmeme</a>
+                        </span>
+                        <span>1 day ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6167-london-based-causaly-which-uses-ai-for-biomedical-research-and-drug-discovery-raised-a-60m-series-b-led-by-iconiq-growth-taking-its-total-funding-to-93m">
+                                                            discuss
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:X9pAlmaxanIKIDzcWPjY -->                                            <div wire:id="nVKsifKpDbnmz24EDux7" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;nVKsifKpDbnmz24EDux7&quot;,&quot;name&quot;:&quot;single-post&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:{&quot;l276896800-0&quot;:{&quot;id&quot;:&quot;6s7UysE24EKd02x9Bhtk&quot;,&quot;tag&quot;:&quot;div&quot;}},&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;9e45be2a&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;detailPage&quot;:false},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6170,&quot;relations&quot;:[&quot;source&quot;,&quot;tags&quot;,&quot;user&quot;],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;a01d1ac5a5712111118ab62f2a0c239446939d5f75973f2c1e86916f460b64fb&quot;}}" class="flex items-start space-x-2 pl-3 pr-6 py-2">
+            <div class="flex-shrink-0 text-primary font-medium self-start place-self-start w-4 text-center overflow-hidden">
+            <div wire:id="6s7UysE24EKd02x9Bhtk" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;6s7UysE24EKd02x9Bhtk&quot;,&quot;name&quot;:&quot;single-post-vote&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;1c77131e&quot;,&quot;data&quot;:{&quot;post&quot;:[],&quot;vote&quot;:null},&quot;dataMeta&quot;:{&quot;models&quot;:{&quot;post&quot;:{&quot;class&quot;:&quot;App\\Models\\Post&quot;,&quot;id&quot;:6170,&quot;relations&quot;:[],&quot;connection&quot;:&quot;mysql&quot;,&quot;collectionClass&quot;:null}}},&quot;checksum&quot;:&quot;e971822271cf3d7e218417fb7321bbcbe7264dc357bccd455619d7ddb23c9288&quot;}}" class="flex justify-center text-sm mt-0">
+            <a href="https://news.bensbites.co/login" class="text-gray-400">
+            <div class="">
+                <svg class="w-4 h-4" version="1.1" viewBox="0 0 1200 1200"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="m0 940.49 589.27-680 609.75 680z" fill="currentColor" fill-rule="evenodd" />
+                </svg>
+            </div>
+            <span>
+                4
+            </span>
+        </a>
+            </div>
+
+<!-- Livewire Component wire-end:6s7UysE24EKd02x9Bhtk -->        </div>
+        <div class="">
+                                    <h3 class="text-primary leading-5 text-[15px]">
+                        <a rel="nofollow noopener" target="_blank" href="https://news.bensbites.co/posts/6170-ai-cold-outreach-101-client-acquisition-masterclass-ai-automation-agency/out" class="visited:text-secondary font-medium">
+                                                        AI Cold Outreach 101 🤖 Client Acquisition Masterclass (AI Automation Agency)
+                                                    </a>
+                                                                                <a href="https://news.bensbites.co/tags/agents" style=" background-color: #fffcd7; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">agents</a>
+                                                        <a href="https://news.bensbites.co/tags/gpt-4" style=" background-color: #fffcd7; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">gpt-4</a>
+                                                        <a href="https://news.bensbites.co/tags/learn" style=" background-color: #f9ddde; color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">learn</a>
+                                                        <a href="https://news.bensbites.co/tags/video" style=" background-color: #ddebf9;  color: #595851; " class="text-gray-600 bg-gray-50 inline-flex items-center rounded px-1 py-0 text-xs font-light ring-1 ring-inset ring-gray-500/10">video</a>
+                                                                            <span class="font-normal text-secondary text-xs italic">youtu.be</span>
+                    </h3>
+                
+                
+               <div class="flex space-x-1.5 text-xs text-secondary mt-1">
+                     
+
+                                            <span> by <a class="hover:underline  " href="https://news.bensbites.co/users/LangLabs">
+                            LangLabs
+                        </a>
+                        </span>
+                        <span>1 day ago</span>
+                                        <div>
+                        &bull; <a href="https://news.bensbites.co/posts/6170-ai-cold-outreach-101-client-acquisition-masterclass-ai-automation-agency">
+                                                            1 comment
+                                                    </a>
+                    </div>
+                                                        </div>
+        </div>
+    </div>
+
+<!-- Livewire Component wire-end:nVKsifKpDbnmz24EDux7 -->                                    </div>
+                    </div>
+    </div>
+
+    <div class="p-3">
+        <div>
+            <nav role="navigation" aria-label="Pagination Navigation" class="flex justify-between">
+            <span>
+                
+                                    <span class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 cursor-default leading-5 rounded-md select-none">
+                        &laquo; Previous
+                    </span>
+                            </span>
+
+            <span>
+                
+                                                            <button type="button" wire:click="nextPage('page')" wire:loading.attr="disabled" dusk="nextPage" class="relative inline-flex items-center px-4 py-2 ml-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150">
+                                Next &raquo;
+                        </button>
+                                                </span>
+        </nav>
+    </div>
+
+    </div>
+
+    <script>
+        Livewire.on('gotoTop', () => {
+            window.scrollTo({
+                top: 15,
+                left: 15,
+                behaviour: 'smooth'
+            })
+        })
+    </script>
+</div>
+
+<!-- Livewire Component wire-end:9k3axa5EZQytUTSB9pNt -->                </div>
+            </div>
+            <div class="lg:col-span-4">
+                                <div class="p-6 border w-full bg-white mb-6">
+                </div>
+                
+                <div class="border w-full bg-white mt-6">
+                    <div>
+    <h4 class="px-6 py-1.5 border-b leading-normal text-sm">
+        💌 Recent daily digests
+    </h4>
+
+    <div class="p-4">
+                    <div class="">
+                <a target="_blank" rel="noopener" href="https://bensbites.beehiiv.com/p/rise-ai-sidekicks">
+                    <h2 class>The rise of AI sidekicks</h2>
+                    <p class="mt-2 font-light text-xs">
+                        PLUS: Stripe&#039;s fraud detection with AI, Open AI&#039;s press deal and duping scams in Stability
+                    </p>
+                </a>
+            </div>
+                    <div class="mt-6">
+                <a target="_blank" rel="noopener" href="https://bensbites.beehiiv.com/p/google-bard-can-now-speak">
+                    <h2 class>Google Bard can now speak</h2>
+                    <p class="mt-2 font-light text-xs">
+                        PLUS: Musk&#039;s X AI company and Firefly generates 1B images.
+                    </p>
+                </a>
+            </div>
+                    <div class="mt-6">
+                <a target="_blank" rel="noopener" href="https://bensbites.beehiiv.com/p/claude-2-enters-arena">
+                    <h2 class>Claude 2 enters the arena</h2>
+                    <p class="mt-2 font-light text-xs">
+                        PLUS: Shutterstock&#039;s latest AI deal, more Chinese models coming up
+                    </p>
+                </a>
+            </div>
+            </div>
+
+    <h2 class="">
+
+    <footer class="px-6 py-1.5 border-t leading-normal text-sm">
+        <a target="_blank" rel="noopener" href="https://www.bensbites.co">View all past issues &rarr; </a>
+    </footer>
+</div>
+                </div>
+
+            </div>
+        </div>
+
+
+        
+
+    </div>
+
+    </div>
+    <div>
+        <footer class="border-t border-gray-200 py-2 mt-6 bg-white">
+    <div class="max-w-7xl mx-auto text-gray-500 text-xs px-4 xl:px-0">
+        <div class="flex">
+
+        </div>
+    </div>
+</footer>
+    </div>
+            <script>
+    if (window.Alpine) {
+        console.warn(
+            'Laravel Comments scripts were loaded after Alpine. ' +
+            'Please ensure Alpine is loaded last so Laravel Comments can initialize first.'
+        );
+    }
+</script>
+    </body>
 </html>
